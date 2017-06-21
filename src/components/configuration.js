@@ -15,7 +15,6 @@ properties:[],
   };
 
   render() {
-    console.log(this.state.properties)
     return (
       <div className="">
       <NavLink to="/" ><h1>Configuration</h1></NavLink>

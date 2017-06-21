@@ -63,7 +63,6 @@ float: "left",
 width: "33%",
 listStyle:"none"
 };
-console.log(this.state)
     return(
 
     <Link to={"/property/"+this.props.data._id}>  <li style={listStyle}>

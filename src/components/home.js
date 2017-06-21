@@ -21,10 +21,9 @@ properties:[],
   };
 
   render() {
-    console.log(this.state.properties)
     return (
 
-      <div className="App">
+      <div>
         <ul>
           {this.state.properties.map((property,i) => <List key={i} data={property}/>)}
         </ul>

@@ -21,9 +21,6 @@ class AddActions extends Component {
     })
   }
   handleSubmit(e){
-e.preventDefault();
-alert(this.state.name + " " + this.state.company_id + " "  + this.state.custom);
-
 
 fetch('http://localhost:3030/actions',{
 method:"post",
@@ -34,15 +31,7 @@ body: JSON.stringify({
 	"company_id":this.state.company_id,
   })
 })
-
-
-
-
-  }
-
-  componentWillMount(){
-
-  };
+}
 
   render() {
     return (
