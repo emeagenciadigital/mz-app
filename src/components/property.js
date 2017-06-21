@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {  Link, NavLink } from 'react-router-dom';
-import AddActions from "./configuration/addaction/addActions";
+import {  Link } from 'react-router-dom';
 
-class Configuration extends Component {
+class Property extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -16,13 +15,14 @@ properties:[],
   render() {
     console.log(this.state.properties)
     return (
+
       <div className="">
-      <NavLink to="/" ><h1>Configuration</h1></NavLink>
-      <AddActions/>
+      <Link to="/" ><h1>Propiedad this.props.id</h1></Link>
+
       </div>
     );
   }
 }
 
 
-export default Configuration;
+export default Property;

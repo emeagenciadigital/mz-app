@@ -25,9 +25,6 @@ properties:[],
     return (
 
       <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React {this.state.color}</h2>
-        </div>
         <ul>
           {this.state.properties.map((property,i) => <List key={i} data={property}/>)}
         </ul>

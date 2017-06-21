@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {  Link } from 'react-router-dom';
 class List extends Component{
   constructor(props){
     super(props);
@@ -65,13 +66,13 @@ listStyle:"none"
 console.log(this.state)
     return(
 
-      <li style={listStyle}><a href={this.props.data._id}>
-        <img alt="property" src={this.props.data.image_id} />
+    <Link to={"/property/"+this.props.data._id}>  <li style={listStyle}>
+       <img alt="property" src={this.props.data.image_id} />
         <p>{this.state.propertyaction} de {this.state.propertytype} en {this.state.propertycity}</p>
         <p>{this.props.data.rentprice}</p>
         <p>{this.props.data.saleprice}</p>
-        </a>
       </li>
+      </Link>
     );
   }
 }
