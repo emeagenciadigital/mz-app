@@ -3,14 +3,13 @@ import React, { Component } from 'react';
 class Actionslist extends Component{
   constructor(props){
     super(props);
-
+    this.state = {
+actions:[],
+    };
 }
-
   render(){
-
-  console.log(this.props.data)
     return(
-      <li>ok</li>
+      <li>{this.props.data.name}ok</li>
 
     );
     }

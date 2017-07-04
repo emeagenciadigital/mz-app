@@ -10,8 +10,8 @@ import {
 } from 'react-router-dom';
 import Home from './components/home.js';
 import Property from './components/property.js';
+import Configuration from './components/configuration.js';
 
-import Configuration from './components/configuration.js'
 ReactDOM.render(
 
   <Router>
@@ -23,6 +23,7 @@ ReactDOM.render(
       <hr/>
       <Route exact path="/" component={Home}/>
       <Route path="/configuration" component={Configuration}/>
+
       <Route path="/property/:id" component={Property}/>
     </div>
   </Router>

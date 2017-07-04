@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Actionslist from "./actionlist";
+import Actions from "./actions";
 class GetActions extends Component {
   constructor(props){
     super(props);
-     
+
 }
     render() {
         return (
@@ -18,35 +18,3 @@ class GetActions extends Component {
     }
 
 export default GetActions;
-
-    class Actions extends Component {
-      constructor(props){
-        super(props);
-         this.state = {
-           actions:[],
-         };
-    }
-
-    componentWillMount(){
-      fetch('http://localhost:3030/actions')
-          .then((response) => {
-              return response.json();
-          })
-          .then((actionsdata) => {
-     var actions = actionsdata.data;
-     this.setState({actions:actions });
-  });
-
-    }
-        render() {
-            return (
-              <div className="">
-              <ul>
-              {this.state.actions.map((action,i) => <Actionslist key={i} data={action}/>)}
-                <Actionslist/>
-              </ul>
-              </div>
-
-            );
-          }
-        }

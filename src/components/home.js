@@ -21,6 +21,7 @@ properties:[],
   };
 
   render() {
+    console.log(this.state.properties)
     return (
 
       <div>
