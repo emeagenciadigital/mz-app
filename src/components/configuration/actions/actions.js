@@ -24,9 +24,15 @@ componentWillMount(){
 console.log(this.state.actions);
         return (
           <div className="">
-          <ul>
+          <table>
+  <tr>
+    <th>Nombre Accion</th>
+    <th>Custom</th>
+    <th>Company</th>
+    <th>Acciones</th>
+  </tr>
           {this.state.actions.map((action,i) => <Actionslist key={i} data={action}/>)}
-          </ul>
+          </table>
           </div>
 
         );
