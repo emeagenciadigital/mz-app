@@ -13,7 +13,8 @@ actions:[],
 
 handleUpdate(e){
   alert("it´s me " + " " + this.props.data._id)
-}
+
+};
 handleDelete(e){
   console.log("delete"+ "  "+this.props.data._id);
 
