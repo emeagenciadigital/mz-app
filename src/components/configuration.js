@@ -16,10 +16,10 @@ properties:[],
 
   render() {
     return (
-      <div className="">
-      <NavLink to="/" ><h1>Configuration</h1></NavLink>
-      <AddActions/>
-      <GetActions/>
+      <div className="inner">
+        <h1>Configuraciones</h1>
+        <AddActions/>
+        <GetActions/>
       </div>
     );
   }

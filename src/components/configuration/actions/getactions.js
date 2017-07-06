@@ -9,7 +9,7 @@ class GetActions extends Component {
         return (
 
           <div className="">
-          <h1>Listado de Acciones</h1>
+          <h2>Listado de Acciones</h2>
           <Actions/>
           </div>
 

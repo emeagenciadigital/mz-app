@@ -30,7 +30,7 @@ this.setState({propertydata:property});
 console.log(this.state.propertydata);
     return (
 
-      <div className="">
+      <div className="inner">
       <img src={this.state.propertydata.image_id}/>
       <h1>{this.state.propertydata.action} de {this.state.propertydata.type} en {this.state.propertydata.city},{this.state.propertydata.areas}</h1>
       <h2>Id de la propiedad: {this.state.propertydata._id}</h2>

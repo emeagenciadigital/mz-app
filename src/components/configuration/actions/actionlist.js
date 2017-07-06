@@ -34,7 +34,7 @@ element.parentNode.removeChild(element);
   <td>{this.props.data.name} - {this.props.data._id}</td>
   <td>{this.props.data.custom}</td>
   <td>{this.props.data.company_id}</td>
-  <td><button onClick={this.handleUpdate}>Editar</button> - <button onClick={this.handleUpdate}>Eliminar</button></td>
+  <td><button onClick={this.handleUpdate}>Editar</button> - <button onClick={this.handleDelete}>Eliminar</button></td>
 </tr>
 
 

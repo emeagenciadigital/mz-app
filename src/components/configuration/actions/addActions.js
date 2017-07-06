@@ -37,10 +37,10 @@ body: JSON.stringify({
     return (
 
       <div className="">
-      <h1>Crear Acciones</h1>
+      <h2>Crear Acciones</h2>
       <form onSubmit={this.handleSubmit}>
-      <label>Nombre de la Acción: <input  name="name" value={this.state.name}  onChange={this.handlechange} placeholder="Vender"/></label>
-      <label>Compañia ID: <input name="company_id" value={this.state.company_id}  onChange={this.handlechange} placeholder="Id de la compañia"/></label>
+      <label>Nombre de la Acción: <input  type="text" name="name" value={this.state.name}  onChange={this.handlechange} placeholder="Vender"/></label>
+      <label>Compañia ID: <input type="text" name="company_id" value={this.state.company_id}  onChange={this.handlechange} placeholder="Id de la compañia"/></label>
       <label>
         <select name="custom" onChange={this.handlechange}>
         <option value="false">No es Custom</option>
