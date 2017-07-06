@@ -6,6 +6,10 @@ import React, { Component } from 'react';
       constructor(props){
         super(props);
     }
+    componentWillMount(){
+      
+
+    }
     render(){
 
         return (

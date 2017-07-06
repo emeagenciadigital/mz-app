@@ -20,9 +20,12 @@ class AddProperty extends Component {
       company_id:"59416330bd894b3b8ce68524",
       owner_id:"594170aa27dd153e946a4ae6",
       actions:[],
-      types:[]
+      types:[],
+      countries:[],
+      cities:[]
     });
   this.handlechange = this.handlechange.bind(this);
+  this.getoptions = this.getoptions.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
 
 }
@@ -50,12 +53,25 @@ fetch('http://localhost:3030/typeofproperty')
 var types = typesdata.data;
 this.setState({types:types });
 });
-
-
-
 // End Get Types//
+//Start Get countries //
+fetch('http://localhost:3030/countries')
+    .then((response) => {
+        return response.json();
+    })
+    .then((countriesdata) => {
+var countries = countriesdata.data;
+this.setState({countries:countries });
+});
+// End Get CCountries//
 
 }
+
+//Start Get cities //
+
+
+
+// End Get Cities//
 handleSubmit(e){
   alert("you click submit")
 }
@@ -66,8 +82,33 @@ handlechange(e) {
   const value= target.value;
   this.setState({
     [name] : value
-  })
+  });
+
+if(target.name === "country_id"){
+this.getoptions("http://localhost:3030/cities","?country_id=",target.value,"cities");
 }
+
+
+}
+
+
+
+
+getoptions(url,targetname,filtervalue,statename){
+  const name = statename;
+  console.log(this.state.country_id+"before")
+fetch(url+targetname+filtervalue)
+    .then((response) => {
+        return response.json();
+    })
+    .then((citiesdata) => {
+var statename = citiesdata.data;
+this.setState({[name]:statename });
+});
+console.log("cities called")
+console.log(this.state.country_id+"after")
+}
+
 render() {
 console.log(this.state);
     return (
@@ -92,8 +133,16 @@ console.log(this.state);
           <label>Baños<input type="number" name="bathrooms" onChange={this.handlechange}/></label>
           <label>Garaje<input type="number" name="garage" onChange={this.handlechange}/></label>
           <h2>Ubicación</h2>
-          <label>Pais</label>
-          <label>Ciudad</label>
+          <label>Pais
+            <select name="country_id" onClick={this.handleChange} onChange={this.handlechange}>
+              {this.state.countries.map((type,i) => <GetOption key={i} data={type}/>)}
+            </select>
+          </label>
+          <label>Ciudad
+          <select name="city_id"  onChange={this.handlechange}>
+            {this.state.cities.map((type,i) => <GetOption key={i} data={type}/>)}
+          </select>
+          </label>
           <label>Zona</label>
           <label>Barrio</label>
           <label>Dirección<input type="text" name="address" onChange={this.handlechange}/></label>
